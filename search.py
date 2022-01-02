@@ -14,7 +14,7 @@ locations = ['local','S3']
 
 def index_files(locations,my_path=None):
     filelist = []
-    if not s3_bucket or local_path:
+    if s3_bucket == None or local_path == None:
         print('You have not set the variables yet for s3_bucket and local_path, please do this before running again.')
         quit()
     else:
