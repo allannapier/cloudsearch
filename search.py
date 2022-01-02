@@ -10,6 +10,7 @@ import argparse
 #YOU MUST HAVE YOUR AWS CREDENTIALS SET IN ENVIRONMENT ALREADY, DON'T SAVE THEM IN THE CODE, THAT IS NOT SECURE
 s3_bucket = None
 local_path = None
+locations = ['local','S3']
 
 def index_files(locations,my_path=None):
     filelist = []
@@ -57,7 +58,6 @@ parser.add_argument('searchterm', metavar='N', type=str, nargs='+',
 
 args = parser.parse_args()
 
-locations = ['local','S3']
 files = index_files(locations,local_path)
 
 pprint.pprint(search_for_file(files,args.searchterm))
